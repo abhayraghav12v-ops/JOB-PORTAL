@@ -1,4 +1,9 @@
+/* =========================================================
+   SMCareers - Job Application Portal
+   Stylesheet: layout, components, responsive, dark/light theme
+   ========================================================= */
 
+/* ---------- CSS Reset & Base ---------- */
 * {
   margin: 0;
   padding: 0;
