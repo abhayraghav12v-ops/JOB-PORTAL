@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMCareers - Find Your Next Career Opportunity</title>
+  <meta name="description" content="SMCareers - Explore the latest internship and job opportunities and take the next step in your career." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">SM</span>
+        <span class="logo-text">Careers</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#jobs" class="nav-link">Jobs</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#jobs" class="btn btn-primary nav-cta">Apply Now</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <span class="theme-icon-dark">🌙</span>
+          <span class="theme-icon-light">☀️</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <h1 class="hero-title">Find Your Next Career Opportunity</h1>
+      <p class="hero-desc">
+        Explore the latest internship and job opportunities and take the next step in your career.
+      </p>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search by job title, company, skills or location..."
+          aria-label="Search jobs"
+        />
+        <button class="btn btn-primary" id="searchBtn">Search</button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="statJobs">0</span>
+          <span class="stat-label">Open Positions</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statApplied">0</span>
+          <span class="stat-label">Applications</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statBookmarks">0</span>
+          <span class="stat-label">Bookmarked</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOBS SECTION ============ -->
+  <section class="jobs-section" id="jobs">
+    <div class="container">
+      <div class="section-head">
+        <h2>Open Positions</h2>
+        <p>Browse all available roles and apply with a single click.</p>
+      </div>
+
+
+      <div class="filters" id="filters">
+        <div class="filter-group">
+          <label for="filterCategory">Category</label>
+          <select id="filterCategory" class="filter-select">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterLocation">Location</label>
+          <select id="filterLocation" class="filter-select">
+            <option value="">All Locations</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterType">Job Type</label>
+          <select id="filterType" class="filter-select">
+            <option value="">All Types</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterExperience">Experience</label>
+          <select id="filterExperience" class="filter-select">
+            <option value="">All Levels</option>
+          </select>
+        </div>
+
+        <div class="filter-group filter-actions">
+          <button class="btn btn-ghost" id="clearFilters">Clear All</button>
+        </div>
+      </div>
+
+      <p class="results-count" id="resultsCount"></p>
+
+      <div class="jobs-grid" id="jobsGrid"></div>
+
+      <!-- No results message -->
+      <p class="no-results" id="noResults" hidden>No jobs found matching your search.</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About SMCareers</h2>
+        <p>Helping job seekers and freshers find the right start.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To connect talented individuals with the right opportunities and help them grow professionally.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🤝</div>
+          <h3>For Everyone</h3>
+          <p>Whether you are a fresher or an experienced professional, SMCareers has a role for you.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🚀</div>
+          <h3>Grow With Us</h3>
+          <p>We partner with leading companies to bring you internships and full-time positions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact Us</h2>
+        <p>Have a question? Reach out and we will get back to you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Email:</strong> contact@smcareers.com</p>
+          <p><strong>Phone:</strong> +91 98765 43210</p>
+          <p><strong>Address:</strong> Sector 62, Noida, Uttar Pradesh, India</p>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-success" id="contactSuccess" hidden>Thanks! Your message has been sent.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> SMCareers. Built with HTML, CSS &amp; Vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- ============ JOB DETAILS MODAL ============ -->
+  <div class="modal-overlay" id="detailsModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+      <button class="modal-close" data-close-modal="detailsModal" aria-label="Close">&times;</button>
+      <h3 id="detailsTitle">Job Details</h3>
+      <div class="modal-body" id="detailsBody"></div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="detailsApplyBtn">Apply Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ APPLICATION FORM MODAL ============ -->
+  <div class="modal-overlay" id="applyModal" hidden>
+    <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+      <button class="modal-close" data-close-modal="applyModal" aria-label="Close">&times;</button>
+      <h3 id="applyModalTitle">Apply for this Job</h3>
+      <p class="applied-job-info" id="appliedJobInfo"></p>
+
+      <form id="applicationForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="req">*</span></label>
+            <input type="text" id="fullName" placeholder="Enter your full name" />
+            <span class="error" id="fullNameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="you@example.com" />
+            <span class="error" id="emailError"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile">Mobile Number <span class="req">*</span></label>
+            <input type="tel" id="mobile" placeholder="10-digit mobile number" maxlength="10" />
+            <span class="error" id="mobileError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="qualification">Qualification <span class="req">*</span></label>
+            <input type="text" id="qualification" placeholder="e.g. B.Tech, BCA, MCA" />
+            <span class="error" id="qualificationError"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="experience">Experience <span class="req">*</span></label>
+            <input type="text" id="experience" placeholder="e.g. Fresher / 2 years" />
+            <span class="error" id="experienceError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="skills">Skills <span class="req">*</span></label>
+            <input type="text" id="skills" placeholder="Comma separated, e.g. HTML, CSS, JavaScript" />
+            <span class="error" id="skillsError"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="resume">Resume <span class="req">*</span></label>
+          <input type="file" id="resume" accept=".pdf,.doc,.docx,.txt" />
+          <span class="error" id="resumeError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="coverMessage">Cover Message <span class="req">*</span></label>
+          <textarea id="coverMessage" rows="4" placeholder="Tell us why you are a good fit (min 30 characters)"></textarea>
+          <div class="char-counter"><span id="charCount">0</span> / 500 characters</div>
+          <span class="error" id="coverMessageError"></span>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-close-modal="applyModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ SUCCESS MODAL ============ -->
+  <div class="modal-overlay" id="successModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close-modal="successModal" aria-label="Close">&times;</button>
+      <div class="success-icon">✅</div>
+      <h3>Application Submitted Successfully!</h3>
+      <div class="modal-body" id="successBody"></div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-close-modal="successModal">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BACK TO TOP BUTTON ============ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
